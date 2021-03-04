@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  voltest:
+    image: "volumetests"
+    container_name: "volumetests"
+    ports:
+      - "5555:5555"
+    environment:
+      - PROPERTIES_PATH=application-docker.properties
+    volumes:
+      - ./cfg:/cfg
+      - zkdata:/zk/data
+
+volumes:
+  zkdata:
+
